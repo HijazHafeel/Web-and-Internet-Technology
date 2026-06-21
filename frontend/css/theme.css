@@ -1,0 +1,216 @@
+/* ============================================================
+   Campus Connect — shared modern theme
+   Loaded on every page, before the page-specific stylesheet so
+   page CSS can still override anything it needs to.
+   ============================================================ */
+
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-strong: #f1f2f8;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-2: #4338ca;
+  --accent-soft: #eef2ff;
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --warning: #b45309;
+  --warning-soft: #fef3c7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--accent); }
+
+/* ===== Navigation Bar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  box-sizing: border-box;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-user {
+  font-size: 13px;
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover { background: var(--accent-2); transform: translateY(-1px); }
+
+.logout-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.logout-btn:hover { background: var(--bg); transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; gap: 12px; padding: 14px; }
+  .nav-buttons { width: 100%; justify-content: center; }
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover { background: var(--accent-2); transform: translateY(-1px); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover { background: var(--bg); }
+
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { background: #b91c1c; }
+
+.btn-success { background: var(--success); }
+.btn-success:hover { background: #15803d; }
+
+.btn-sm { padding: 7px 12px; font-size: 13px; border-radius: 8px; }
+
+/* ===== Status badges ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.badge-pending  { background: var(--warning-soft); color: var(--warning); }
+.badge-approved { background: var(--success-soft); color: var(--success); }
+.badge-rejected { background: var(--danger-soft); color: var(--danger); }
+
+/* ===== Inline form messages (replace alert()) ===== */
+.form-msg {
+  display: none;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.form-msg.show { display: block; }
+.form-msg.error   { background: var(--danger-soft);  color: var(--danger); }
+.form-msg.success { background: var(--success-soft); color: var(--success); }
+.form-msg.info    { background: var(--accent-soft);  color: var(--accent-2); }
+
+/* ===== Generic empty state ===== */
+.empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ===== Footer ===== */
+.footer {
+  width: 100%;
+  margin-top: auto;
+  background: #111827;
+  color: #e5e7eb;
+  padding: 48px 40px 0;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.footer-section p { color: #9ca3af; line-height: 1.7; font-size: 14px; margin: 0 0 8px; }
+
+.footer-section ul { list-style: none; padding: 0; margin: 0; }
+.footer-section ul li { margin-bottom: 8px; }
+.footer-section ul li a { color: #9ca3af; text-decoration: none; font-size: 14px; }
+.footer-section ul li a:hover { color: #ffffff; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  padding: 18px 0;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .footer-container { grid-template-columns: 1fr; }
+}

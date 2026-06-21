@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upcoming Events — Campus Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/showevents.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="showevents.html" class="logo">Campus Connect</a>
+    <div class="nav-buttons" id="navAuthArea">
+    </div>
+</nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">✨ Event showcase</div>
+      <h1>Find upcoming university events easily.</h1>
+      <p>Every event below has been reviewed and approved by an admin. Search, browse, and register for what's happening on campus.</p>
+    </div>
+    <div class="hero-visual">
+      <img src="../images/event.jpg" alt="Campus event planning">
+    </div>
+  </section>
+  <div class="feature-row">
+    <article class="small-card">
+      <h3>Instant search</h3>
+      <p>Type to filter events by title, location, or description in real time.</p>
+    </article>
+    <article class="small-card">
+      <h3>Bright stats</h3>
+      <p>See totals, today's events, and upcoming schedules at a glance.</p>
+    </article>
+    <article class="small-card">
+      <h3>Admin approved</h3>
+      <p>Every event shown here has already been reviewed by a university admin.</p>
+    </article>
+  </div>
+  <div class="content">
+    <section class="card">
+      <h2>Event dashboard</h2>
+      <div class="event-counts">
+        <div class="count-card"><strong id="totalCount">0</strong><span>All approved events</span></div>
+        <div class="count-card"><strong id="todayCount">0</strong><span>Events happening today</span></div>
+        <div class="count-card"><strong id="upcomingCount">0</strong><span>Upcoming events</span></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>What this page shows</h2>
+      <p style="margin:0;color:var(--muted);line-height:1.8;">This dashboard gives you a polished event overview with quick stats, live search, and a clean event list pulled straight from the Campus Connect database.</p>
+    </section>
+  </div>
+  <section class="card events-section">
+    <div class="event-header">
+      <div>
+        <h2>Your events</h2>
+        <p>Search through approved events and register your seat.</p>
+      </div>
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="Search by title, location, or description">
+      </div>
+    </div>
+    <div id="eventsList" class="events-list"><div class="empty-state">Loading events…</div></div>
+  </section>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/showevents.js"></script>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Campus Connect</h3>
+            <p>Campus Connect helps students and organizers discover, create, and manage university events efficiently, making campus engagement easier and more accessible.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showevents.html">View Events</a></li>
+                <li><a href="event.html">My Events</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: campusconnect@university.edu</p>
+            <p>Phone: +94 77 123 4567</p>
+            <p>Address: University Campus, Sri Lanka</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Campus Connect — University Events &amp; Club Management System. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
+

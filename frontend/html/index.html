@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Connect — University Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+  <div class="gate-wrap">
+    <div class="gate-intro">
+      <span class="pill">Campus Connect</span>
+      <h1>University events, all in one place.</h1>
+      <p>Enter your Student ID to see what's happening on campus — workshops, seminars, socials, and competitions, all approved by your university.</p>
+      <ul>
+        <li>Browse every upcoming, admin-approved event.</li>
+        <li>Sign up to add and manage your own events.</li>
+        <li>Admins review every event before it goes public.</li>
+      </ul>
+    </div>
+
+    <div class="gate-form">
+      <h2>Welcome</h2>
+      <p class="sub">Enter your Student ID to continue.</p>
+      <div id="formMsg" class="form-msg"></div>
+      <form id="gateForm">
+        <div class="form-row">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" name="studentId" type="text" placeholder="e.g. EC/2022/049" pattern="[A-Za-z]{2,5}/[0-9]{4}/[0-9]{3}" required />
+        </div>
+        <button type="submit" class="btn" style="width:100%">Continue</button>
+      </form>
+      <div class="gate-links">
+        <a href="login.html">Log in to manage events</a>
+        <a href="signup.html">Create an account</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>
