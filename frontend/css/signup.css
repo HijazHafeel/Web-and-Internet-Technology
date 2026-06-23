@@ -26,8 +26,8 @@ body {
   padding: 32px;
   border-radius: 18px;
   background:
-    linear-gradient(rgba(79, 70, 229, 0.88), rgba(67, 56, 202, 0.9)),
-    url("../images/signup.jpeg") center / cover;
+    linear-gradient(rgba(133, 129, 211, 0.88), rgba(54, 47, 97, 0.9)),
+    url("../images/image.png") center / cover;
   color: #ffffff;
 }
 
