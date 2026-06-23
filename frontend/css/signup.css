@@ -26,7 +26,7 @@ body {
   padding: 32px;
   border-radius: 18px;
   background:
-    linear-gradient(rgba(133, 129, 211, 0.88), rgba(54, 47, 97, 0.9)),
+    linear-gradient(rgba(153, 150, 211, 0.88), rgba(20, 13, 65, 0.9)),
     url("../images/image.png") center / cover;
   color: #ffffff;
 }
