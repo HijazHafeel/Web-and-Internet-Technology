@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up — Campus Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="pill">Event management</span>
+      <h1>Join the easiest way to manage your university events.</h1>
+      <p>Create your student account to add events, track approvals, and register for what's happening on campus.</p>
+      <div class="hero-features">
+        <div class="feature-card"><strong>Fast setup</strong> Fill out the form and get started right away.</div>
+        <div class="feature-card"><strong>Modern UI</strong> Clean styling with strong colors and smooth shadows.</div>
+        <div class="feature-card"><strong>Secure form</strong> Passwords are stored encrypted, never in plain text.</div>
+        <div class="feature-card"><strong>Mobile-ready</strong> Responsive layout looks great on all screen sizes.</div>
+      </div>
+      <svg class="hero-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="signupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)" />
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="280" fill="url(#signupGrad)" />
+        <circle cx="80" cy="50" r="30" fill="#ffffff" opacity="0.15" />
+        <circle cx="350" cy="240" r="45" fill="#ffffff" opacity="0.1" />
+        <ellipse cx="150" cy="220" rx="40" ry="45" fill="#fff9e6" opacity="0.7" />
+        <circle cx="150" cy="90" r="30" fill="#fff9e6" opacity="0.7" />
+        <path d="M 125 70 Q 125 50 150 46 Q 175 50 175 70 Z" fill="#2d1b4e" opacity="0.25" />
+        <circle cx="140" cy="85" r="3" fill="#2d1b4e" opacity="0.35" />
+        <circle cx="160" cy="85" r="3" fill="#2d1b4e" opacity="0.35" />
+        <path d="M 142 100 Q 150 106 158 100" stroke="#2d1b4e" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.25" />
+        <g transform="translate(220, 130)">
+          <rect x="0" y="0" width="60" height="75" rx="4" fill="#ffffff" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
+          <rect x="3" y="3" width="54" height="15" fill="rgba(255,255,255,0.25)" rx="2" />
+          <line x1="7" y1="25" x2="53" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.35" />
+          <line x1="7" y1="35" x2="53" y2="35" stroke="#ffffff" stroke-width="1" opacity="0.35" />
+          <line x1="7" y1="45" x2="53" y2="45" stroke="#ffffff" stroke-width="1" opacity="0.35" />
+          <line x1="7" y1="55" x2="40" y2="55" stroke="#ffffff" stroke-width="1" opacity="0.35" />
+          <path d="M 7 20 L 10 23 L 14 17" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+        </g>
+      </svg>
+    </section>
+    <section class="form-card">
+      <h2>Create your account</h2>
+      <div id="formMsg" class="form-msg"></div>
+      <form id="signupForm">
+        <div class="form-row">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" name="studentId" type="text" placeholder="e.g. EC/2022/049" pattern="[A-Za-z]{2,5}/[0-9]{4}/[0-9]{3}" required />
+        </div>
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">University e-mail</label>
+          <input id="email" name="email" type="email" placeholder="hijaz@stu.kln.ac.lk" pattern="[A-Za-z0-9._%+\-]+@stu\.kln\.ac\.lk" required />
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="At least 6 characters" required />
+        </div>
+        <div class="form-row">
+          <label for="confirm">Confirm password</label>
+          <input id="confirm" name="confirm" type="password" placeholder="Re-enter password" required />
+        </div>
+        <button type="submit" class="btn" id="signupBtn">Sign up</button>
+      </form>
+      <p class="hint">Already have an account? <a href="login.html">Sign in</a></p>
+      <p class="hint" >Welcome to your event management portal. Build an account and start planning with style.</p>
+    </section>
+  </main>
+  <script src="../js/api.js"></script>
+  <script src="../js/signup.js"></script>
+</body>
+</html>

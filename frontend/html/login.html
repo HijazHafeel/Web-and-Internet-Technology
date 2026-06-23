@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Connect - Sign In</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <main class="container" role="main">
+    <section class="left">
+      <img class="hero-img" src="../images/event.jpg" alt="Students planning a campus event">
+      <h1>Welcome back</h1>
+      <p class="lead">Sign in to manage your events, attendees and schedules from one place.</p>
+
+      <ul class="features">
+        <li><span class="dot"></span><span class="muted">Easy event planning.</span></li>
+        <li><span class="dot"></span><span class="muted">Get admin approval in one click.</span></li>
+        <li><span class="dot"></span><span class="muted">Live updates for every event.</span></li>
+      </ul>
+
+      <p class="small intro-note">Built for clubs and organizers who need smoother campus event planning.</p>
+    </section>
+
+    <section class="right">
+      <div class="card" aria-labelledby="signin">
+        <h1 id="signin">Sign in</h1>
+        <div id="formMsg" class="form-msg"></div>
+        <form id="loginForm">
+          <div class="form-row pw-wrap">
+            <label for="identifier" id="identifierLabel">User ID</label>
+            <input id="identifier" name="user_id" type="text" placeholder="e.g. EC/2022/049 or Admin/001" required>
+          </div>
+          <div class="form-row pw-wrap">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required>
+            <button type="button" class="pw-toggle" aria-label="Toggle password visibility" onclick="togglePassword()">Show</button>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn" id="loginBtn">Sign in</button>
+          </div>
+
+          <p class="small auth-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+          <p class="small back-link"><a href="showevents.html">&larr; Back to public events</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

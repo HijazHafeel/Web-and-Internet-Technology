@@ -1,0 +1,76 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="adminBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fef3f5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#adminBg)" />
+
+  <!-- Decorative elements -->
+  <circle cx="80" cy="80" r="35" fill="#7c3aed" opacity="0.1" />
+  <circle cx="340" cy="240" r="50" fill="#4f46e5" opacity="0.08" />
+
+  <!-- Dashboard grid background -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" />
+
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="35" fill="#4f46e5" rx="8" />
+  <text x="60" y="52" font-family="Poppins, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Admin Dashboard</text>
+
+  <!-- Stat cards -->
+  <g>
+    <!-- Stat 1: Events -->
+    <rect x="50" y="75" width="85" height="60" rx="4" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+    <text x="92" y="95" font-family="Poppins, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#4f46e5">24</text>
+    <text x="92" y="110" font-family="Poppins, sans-serif" font-size="10" text-anchor="middle" fill="#6b7280">Events</text>
+
+    <!-- Stat 2: Pending -->
+    <rect x="157" y="75" width="85" height="60" rx="4" fill="#fef3f5" stroke="#f4a261" stroke-width="1" />
+    <text x="199" y="95" font-family="Poppins, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#f4a261">5</text>
+    <text x="199" y="110" font-family="Poppins, sans-serif" font-size="10" text-anchor="middle" fill="#6b7280">Pending</text>
+
+    <!-- Stat 3: Users -->
+    <rect x="264" y="75" width="85" height="60" rx="4" fill="#ecfdf5" stroke="#059669" stroke-width="1" />
+    <text x="306" y="95" font-family="Poppins, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#059669">128</text>
+    <text x="306" y="110" font-family="Poppins, sans-serif" font-size="10" text-anchor="middle" fill="#6b7280">Students</text>
+  </g>
+
+  <!-- User list -->
+  <g>
+    <!-- List header -->
+    <rect x="50" y="150" width="310" height="20" fill="#f9fafb" rx="2" />
+    <text x="60" y="162" font-family="Poppins, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">Name</text>
+    <text x="180" y="162" font-family="Poppins, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">Email</text>
+    <text x="310" y="162" font-family="Poppins, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">Status</text>
+
+    <!-- List row 1 -->
+    <line x1="50" y1="176" x2="360" y2="176" stroke="#e5e7eb" stroke-width="0.5" />
+    <circle cx="60" cy="180" r="6" fill="#f4a261" opacity="0.6" />
+    <text x="72" y="184" font-family="Poppins, sans-serif" font-size="9" fill="#111827">Sarah Ahmed</text>
+    <text x="180" y="184" font-family="Poppins, sans-serif" font-size="9" fill="#6b7280">sarah@stu...</text>
+    <circle cx="320" cy="180" r="4" fill="#059669" />
+
+    <!-- List row 2 -->
+    <line x1="50" y1="198" x2="360" y2="198" stroke="#e5e7eb" stroke-width="0.5" />
+    <circle cx="60" cy="202" r="6" fill="#4f46e5" opacity="0.6" />
+    <text x="72" y="206" font-family="Poppins, sans-serif" font-size="9" fill="#111827">Marcus Lee</text>
+    <text x="180" y="206" font-family="Poppins, sans-serif" font-size="9" fill="#6b7280">marcus@stu...</text>
+    <circle cx="320" cy="202" r="4" fill="#059669" />
+
+    <!-- List row 3 -->
+    <line x1="50" y1="220" x2="360" y2="220" stroke="#e5e7eb" stroke-width="0.5" />
+    <circle cx="60" cy="224" r="6" fill="#7c3aed" opacity="0.6" />
+    <text x="72" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#111827">Priya Singh</text>
+    <text x="180" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#6b7280">priya@stu...</text>
+    <circle cx="320" cy="224" r="4" fill="#dc2626" />
+  </g>
+
+  <!-- Badge: Admin verified -->
+  <g transform="translate(320, 50)">
+    <circle cx="0" cy="0" r="14" fill="#4f46e5" />
+    <text x="0" y="5" font-family="Poppins, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">✓</text>
+  </g>
+</svg>

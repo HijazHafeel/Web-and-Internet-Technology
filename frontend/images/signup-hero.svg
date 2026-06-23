@@ -1,0 +1,76 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f3e5f5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4a261;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e76f51;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+
+  <!-- Decorative circles -->
+  <circle cx="80" cy="60" r="35" fill="#4f46e5" opacity="0.1" />
+  <circle cx="350" cy="320" r="50" fill="#4f46e5" opacity="0.08" />
+  <circle cx="300" cy="100" r="25" fill="#7c3aed" opacity="0.12" />
+
+  <!-- Person body -->
+  <ellipse cx="200" cy="280" rx="45" ry="50" fill="url(#skinGrad)" />
+
+  <!-- Person head -->
+  <circle cx="200" cy="120" r="35" fill="url(#skinGrad)" />
+
+  <!-- Hair -->
+  <path d="M 165 95 Q 165 70 200 65 Q 235 70 235 95 Z" fill="#2d1b4e" />
+
+  <!-- Eyes -->
+  <circle cx="188" cy="115" r="4" fill="#2d1b4e" />
+  <circle cx="212" cy="115" r="4" fill="#2d1b4e" />
+
+  <!-- Smile -->
+  <path d="M 190 130 Q 200 138 210 130" stroke="#2d1b4e" stroke-width="2" fill="none" stroke-linecap="round" />
+
+  <!-- Left arm holding clipboard -->
+  <rect x="160" y="200" width="15" height="70" rx="7" fill="url(#skinGrad)" transform="rotate(-20 167 200)" />
+
+  <!-- Right arm -->
+  <rect x="225" y="200" width="15" height="65" rx="7" fill="url(#skinGrad)" transform="rotate(15 232 200)" />
+
+  <!-- Clipboard -->
+  <g transform="translate(140, 210)">
+    <rect x="0" y="0" width="70" height="85" rx="4" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />
+    <rect x="3" y="3" width="64" height="12" fill="#4f46e5" opacity="0.2" />
+    <!-- Checkbox lines -->
+    <line x1="8" y1="22" x2="62" y2="22" stroke="#4f46e5" stroke-width="1.5" opacity="0.5" />
+    <line x1="8" y1="32" x2="62" y2="32" stroke="#4f46e5" stroke-width="1.5" opacity="0.5" />
+    <line x1="8" y1="42" x2="62" y2="42" stroke="#4f46e5" stroke-width="1.5" opacity="0.5" />
+    <!-- Checkmark on first line -->
+    <path d="M 5 21 L 10 26 L 15 19" stroke="#4f46e5" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Floating event cards around person -->
+  <g transform="translate(300, 160)">
+    <rect x="0" y="0" width="60" height="50" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" opacity="0.9" />
+    <circle cx="8" cy="8" r="3" fill="#7c3aed" opacity="0.6" />
+    <line x1="15" y1="8" x2="52" y2="8" stroke="#7c3aed" stroke-width="1" opacity="0.5" />
+    <line x1="8" y1="18" x2="52" y2="18" stroke="#7c3aed" stroke-width="0.8" opacity="0.4" />
+    <line x1="8" y1="26" x2="52" y2="26" stroke="#7c3aed" stroke-width="0.8" opacity="0.4" />
+  </g>
+
+  <g transform="translate(280, 280)">
+    <rect x="0" y="0" width="60" height="50" rx="4" fill="#ffffff" stroke="#4f46e5" stroke-width="1.5" opacity="0.8" />
+    <circle cx="8" cy="8" r="3" fill="#4f46e5" opacity="0.6" />
+    <line x1="15" y1="8" x2="52" y2="8" stroke="#4f46e5" stroke-width="1" opacity="0.5" />
+    <line x1="8" y1="18" x2="52" y2="18" stroke="#4f46e5" stroke-width="0.8" opacity="0.4" />
+    <line x1="8" y1="26" x2="52" y2="26" stroke="#4f46e5" stroke-width="0.8" opacity="0.4" />
+  </g>
+
+  <!-- Text label -->
+  <text x="200" y="380" font-family="Poppins, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#4f46e5">
+    Sign up in seconds
+  </text>
+</svg>
