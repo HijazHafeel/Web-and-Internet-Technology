@@ -6,7 +6,7 @@ A simple full-stack student-event platform:
 
 ## What it does
 
-- Students sign up with their **Student ID** (format: `CourseCode/EnrollmentYear/RollNo`, e.g. `EC/XXXX/XXX') and **university email** (`name@stu.kln.ac.lk`).
+- Students sign up with their **Student ID** (format: `CourseCode/EnrollmentYear/RollNo`, e.g. `EC/20XX/XXX') and **university email** (`name@stu.kln.ac.lk`).
   - Access is only valid within 4 years of enrollment.
 - Logged-in students can add events; new/edited events start as **pending**.
 - Admins (added manually to the database) review pending events and **approve or reject** them.
