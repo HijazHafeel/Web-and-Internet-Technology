@@ -1,101 +1,108 @@
-# Campus Connect — University Events & Club Management System
+# UniEvent — University Event Management System
 
-A simple full-stack student-event platform:
-**Frontend:** HTML5, CSS3, vanilla JavaScript + SVG illustrations  
-**Backend:** PHP (no framework) + MySQL, built for **XAMPP**
+*(Codebase branding: **Campus Connect**)*
 
-## What it does
+A web-based university event management system for the Web Development course. Students can submit events, admins approve them, and approved events appear on a public listing where students can register.
 
-- Students sign up with their **Student ID** (format: `CourseCode/EnrollmentYear/RollNo`, e.g. `EC/20XX/XXX') and **university email** (`name@stu.kln.ac.lk`).
-  - Access is only valid within 4 years of enrollment.
-- Logged-in students can add events; new/edited events start as **pending**.
-- Admins (added manually to the database) review pending events and **approve or reject** them.
-- Approved events show up on the public **Upcoming Events** page, which anyone can browse without logging in.
-- Students can **register** for an approved event (with an optional capacity limit).
-- Admins can edit/delete any event, manage student accounts, and post simple **announcements**.
+## Technology Stack
 
-## Folder structure
+- **HTML** — page structure
+- **CSS** — styling and layout
+- **JavaScript** — form validation, UI behavior, and `fetch()` calls to PHP endpoints
+- **PHP** — server-side processing, sessions, MySQL access
+- **MySQL** — persistent storage
+- **XAMPP** — local Apache + MySQL development environment
+
+## Main Features
+
+| Feature | Status |
+|---------|--------|
+| Guest browse (Student ID gate + public events) | Implemented |
+| Student signup / login | Implemented |
+| Student submit & manage own events | Implemented |
+| Admin approve / reject events | Implemented |
+| Public approved events listing | Implemented |
+| Student event registration / cancel | Implemented |
+| Admin student list & delete | Implemented |
+| Admin announcements (admin panel only) | Partially Implemented |
+| Unified student dashboard (submissions + registrations) | Partially Implemented |
+
+## Folder Structure
 
 ```
-campus-connect/
+Web-and-Internet-Technology/
 ├── database/
-│   └── schema.sql          ← run this once in phpMyAdmin / MySQL
-├── backend/                ← PHP API (all JSON endpoints)
-│   ├── config.php          ← DB credentials (defaults match XAMPP)
-│   ├── session.php         ← session + auth helpers + validators
-│   ├── auth/                signup.php, login.php, logout.php, check_session.php
-│   ├── events/              list.php, get.php, create.php, update.php, delete.php, approve.php, register.php
-│   ├── users/               list.php, update.php, delete.php (admin manages student accounts)
-│   └── announcements/       list.php, create.php
+│   └── schema.sql              # Database creation + admin seed
+├── backend/
+│   ├── config.php              # MySQL connection
+│   ├── session.php             # Sessions, auth helpers, JSON responses
+│   ├── auth/                   # signup, login, logout, check_session
+│   ├── events/                 # CRUD, approve, register, list
+│   ├── users/                  # list, delete (admin)
+│   └── announcements/          # list, create (admin)
 ├── frontend/
-│   ├── css/    (theme.css is shared; no dead code)
-│   ├── js/     (api.js is the shared fetch + validation helper)
-│   ├── images/ (4 SVG illustrations: signup-hero, event-management, admin-dashboard, empty-state)
-│   └── html/   index.html, signup.html, login.html, showevents.html, event.html, admin.html
-├── DOCUMENTATION.md  ← Comprehensive developer guide (API, architecture, troubleshooting)
-└── README.md         ← This file (quick start)
+│   ├── html/                   # index, login, signup, showevents, event, admin
+│   ├── css/                    # theme + page styles
+│   ├── js/                     # api.js + page scripts
+│   └── images/                 # SVG illustrations
+├── docs/                       # Presentation documentation
+├── README.md
+└── DOCUMENTATION.md            # Legacy developer notes (may be outdated)
 ```
 
-## Setup (XAMPP)
+## XAMPP Setup
 
-1. Install/start **XAMPP** and turn on **Apache** and **MySQL** in the control panel.
-2. Copy the whole `campus-connect` folder into your XAMPP `htdocs` folder, e.g.
-   `C:\xampp\htdocs\campus-connect` (Windows) or `/Applications/XAMPP/htdocs/campus-connect` (Mac).
-3. Open **phpMyAdmin** (`http://localhost/phpmyadmin`), go to the **Import** tab, and import
-   `database/schema.sql`. This creates the `campus_connect` database, its tables, and one
-   ready-to-use admin account:
-   - **User ID:** `Admin/001`
-   - **Password:** `Admin@123`
-   *(change this password once you've logged in, or just edit the row in phpMyAdmin)*
-4. If your MySQL uses a different user/password than the XAMPP default (`root` / no password),
-   edit `backend/config.php`.
-5. Visit `http://localhost/campus-connect/frontend/html/index.html` in your browser.
+1. Start **Apache** and **MySQL** in the XAMPP Control Panel.
+2. Place this project under `htdocs`, e.g.  
+   `C:\xampp\htdocs\CampusConnect\Web-and-Internet-Technology`
+3. Open phpMyAdmin: `http://localhost/phpmyadmin`
+4. Confirm `backend/config.php` uses your MySQL credentials (default: `root` / empty password).
 
-That's it — no Composer, no Node build step, no extra PHP extensions beyond the default `mysqli`.
+## Database Import
 
-## Pages
+1. In phpMyAdmin, go to **Import**.
+2. Select `database/schema.sql`.
+3. Click **Go**.
 
-| Page | Who it's for | What it does |
-|---|---|---|
-| `index.html` | everyone | Entry gate (validate Student ID format) → public events |
-| `showevents.html` | everyone | Browse approved events, search, register |
-| `signup.html` | new students | Create a student account (validated Student ID + university email) |
-| `login.html` | students & admins | Real login (Student ID + password, or Admin ID + password) |
-| `event.html` | logged-in students | Create events, see/edit/delete your own events |
-| `admin.html` | logged-in admins | Approve/reject events, manage all events, manage students, post announcements |
+This creates database **`campus_connect`** with tables: `users`, `events`, `registrations`, `announcements`, and seeds one admin account.
 
-## Key Features
+## Default Login Accounts
 
-✅ **Student ID Format Validation:** `CourseCode/EnrollmentYear/RollNo` (e.g. `EC/2022/049`)
-  - Enrollment year must be within 4 years of current year
-  - Validated client-side (instant feedback) and server-side (security)
+| Role | User ID | Password | Notes |
+|------|---------|----------|-------|
+| Admin | `Admin/001` | `Admin@123` | Seeded in `schema.sql` |
+| Student | — | — | Create via **Sign up** (`signup.html`) |
 
-✅ **University Email Enforcement:** `name@stu.kln.ac.lk`
-  - Only official university email addresses allowed
-  - Validated on both frontend and backend
+**Student signup rules:**
+- Student ID format: `EC/2022/049` (2–5 letter course code / 4-digit year / 3-digit roll)
+- Enrollment year must be within the last 4 years
+- Email must end with `@stu.kln.ac.lk`
 
-✅ **Admin Student Management:**
-  - View all student accounts with event counts
-  - Edit student name/email
-  - Delete student (cascades to their events)
-  - Search by name, ID, or email
+## Demo Flow
 
-✅ **Modern Design System:**
-  - Unified CSS theme across all pages
-  - SVG illustrations (fast, scalable, no external requests)
-  - Mobile-responsive layouts
-  - Smooth animations
+1. Open `http://localhost/CampusConnect/Web-and-Internet-Technology/frontend/html/index.html`
+2. Enter a valid-format Student ID → continue to events page
+3. Sign up a student account (or log in if already created)
+4. Create an event on **My Events** (`event.html`) — status becomes **pending**
+5. Log out → log in as `Admin/001`
+6. Approve the event on **Admin dashboard** (`admin.html`)
+7. Open **Upcoming Events** (`showevents.html`) — event is visible
+8. Log in as student → **Register** for the event
+9. Log out
 
-✅ **Clean Code:**
-  - No unused functions or styles
-  - Consistent naming conventions
-  - Prepared SQL statements (SQL injection prevention)
-  - Server-side validation on all inputs
+**Entry URL (adjust if your folder path differs):**
+`http://localhost/CampusConnect/Web-and-Internet-Technology/frontend/html/index.html`
 
-## Notes
+## Known Limitations
 
-- Passwords are hashed with PHP's `password_hash()` (bcrypt) — never stored in plain text.
-- Sessions are plain PHP `$_SESSION`, checked on every protected endpoint.
-- Admin accounts are added directly to the `users` table (phpMyAdmin), not via signup.
-- All SQL queries use prepared statements to prevent SQL injection.
-- For detailed architecture, API endpoints, and troubleshooting, see **DOCUMENTATION.md**.
+- Runs on **localhost only** (XAMPP); not production-deployed
+- Uses **JavaScript `fetch()`** with JSON responses (not classic full-page form POST + redirect)
+- **No seed student account** — create one before demo
+- **Announcements** are stored and shown in the admin panel only (not on public pages)
+- **No admin “create event” form** — admins approve/edit/delete; students create events
+- **Student account edit** by admin is not implemented (delete only)
+- Missing image reference: `showevents.js` expects `frontend/images/event.jpg` (file not in repo)
+- Basic validation; no email verification, rate limiting, or production security hardening
+- No payment, notifications, or real-time updates
+
+For full documentation see **`docs/`**.
